@@ -1,0 +1,32 @@
+class SightingSerializer
+
+    #initialize our object 
+    def initialize(sighting_object)
+        @sighting = sighting_object
+    end
+
+    # a method to serialise the json information we want to use -- we will call this from our sightings controller
+    # def to_serialized_json
+    #     @sighting.to_json(:include => {
+    #       :bird => {:only => [:name, :species]},
+    #       :location => {:only => [:latitude, :longitude]}
+    #     }, :except => [:updated_at])
+    #   end
+
+    #the above can be rewritten as:
+    def to_serialized_json
+        options = {
+          include: {
+            bird: {
+              only: [:name, :species]
+            },
+            location: {
+              only: [:latitude, :longitude]
+            }
+          },
+          except: [:updated_at],
+        }
+        @sighting.to_json(options)
+      end
+
+end
