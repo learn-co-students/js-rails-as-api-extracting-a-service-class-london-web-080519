@@ -287,3 +287,5 @@ With a fully extracted `SightingSerializer`, we were able to leave our controlle
 free of clutter and extra logic. We were able to write a small class and utilize
 its methods multiple times, rather than repeat ourselves. Meanwhile, we now have
 the space within that class to make our code as easy to understand as possible.
+
+change
